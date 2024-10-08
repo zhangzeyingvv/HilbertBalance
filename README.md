@@ -4,7 +4,7 @@ Use Hilbert basis to balancing the chemical equations
 
 ## Installation
 
-- Unzip the "HilbertBalance.zip" file and unzip it. 
+- Download the "HilbertBalance.zip" file and unzip it. 
 - Install Normaliz (https://www.normaliz.uni-osnabrueck.de/)
 - Specify the full path to normaliz.exe in Mathematica (See Examples.nb)
 
