@@ -9,6 +9,7 @@ ClearAll@@Names["HilbertBalance`*"];
 (*
 Author: Zhang Zeying
 Email: zhangzeyingvv@gmail.com
+v1.0
 *)
 
 
