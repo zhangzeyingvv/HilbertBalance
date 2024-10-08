@@ -17,7 +17,7 @@ Use Hilbert basis to to obtain the Hilbert-basis reactions of chemical equations
 
 - ```HilbertBalance["NH4ClO4+HNO3+HCl+H2O->H5ClO6+N2O+NO+NO2+Cl2"]```
 - ```HilbertBalance["HClO3->HClO4+Cl2+O2+H2O->Cl2+O2+H2O"]```
-- HilbertBalance["ClO3+Cl+H->ClO2+Cl2+H2O",  "Charge" -> {-1, -1, 1, 0, 0, 0}]
+- ```HilbertBalance["ClO3+Cl+H->ClO2+Cl2+H2O",  "Charge" -> {-1, -1, 1, 0, 0, 0}]```
 - More examples can be found in Examples.nb.
 
 ## Release Notes
