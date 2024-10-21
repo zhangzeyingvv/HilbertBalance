@@ -1,0 +1,2528 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    113886,       2520]
+NotebookOptionsPosition[    105885,       2350]
+NotebookOutlinePosition[    106308,       2367]
+CellTagsIndexPosition[    106265,       2364]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+The HilbertBalance.wl file should be placed in the same directory as this \
+file. Before proceeding, ensure that Normaliz \
+(https://www.normaliz.uni-osnabrueck.de/) is installed and specify the full \
+path of normaliz.exe, and run the following line to import HilbertBalance. \
+(For Mac and Linux OS, the file name may differ. At present, normaliz-3.9.4 \
+was well tested for HilbertBalance \
+(https://github.com/Normaliz/Normaliz/releases/tag/v3.9.4 )). \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937361051046013*^9, 3.937361197549986*^9}, {
+   3.937361261983738*^9, 3.93736132189798*^9}, {3.937373842544663*^9, 
+   3.937373842620012*^9}, 3.937521341595849*^9, {3.938151094702629*^9, 
+   3.938151109672743*^9}, {3.938151438694501*^9, 3.938151444743813*^9}, {
+   3.938153978852459*^9, 3.938153979356389*^9}, {3.938154043560339*^9, 
+   3.938154100337018*^9}},ExpressionUUID->"57e7b5b8-2fd1-0c40-b95d-\
+eb5dfc5c142c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"<<", "\"\<HilbertBalance`\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+  "NormalizPath", "=", " ", 
+   "\"\<D:\\\\bak-HP-GAME\\\\Mathematica\\\\BalanceBand\\\\normaliz-3.9.4\\\\\
+normaliz.exe\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "NormalizPath", "=", " ", 
+     "\"\</Users/zhang/Downloads/normaliz-3.9.4/normaliz\>\""}], ";"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{
+  3.923186057510998*^9, {3.936319643766487*^9, 3.9363196439365025`*^9}, {
+   3.938151419365753*^9, 3.938151419689515*^9}, 3.938151457582916*^9, 
+   3.938154125787758*^9, 3.9381705311489124`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"4b499569-ef76-4c73-8b67-926b3dbe9b47"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[
+    SubscriptBox["ClO", "3"], "-"], TraditionalForm]],ExpressionUUID->
+  "f6034421-9a29-294a-8b82-06f87bfc0777"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["Cl", "-"], TraditionalForm]],ExpressionUUID->
+  "8c33bf0f-0834-c049-ab91-63c6e5612b7c"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["H", "+"], TraditionalForm]],ExpressionUUID->
+  "2a4f15af-2e90-bb44-bb5d-530480429de0"],
+ " -> ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["ClO", "2"], TraditionalForm]],ExpressionUUID->
+  "a8506312-a69b-794d-b1a2-75d07b41218d"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["Cl", "2"], TraditionalForm]],ExpressionUUID->
+  "8b893d25-c4bd-554c-88ca-2fd9bf03f312"],
+ " + H2O"
+}], "Subsection",
+ CellChangeTimes->{{3.923192394911157*^9, 3.923192428946319*^9}, 
+   3.923208233187954*^9, {3.923208303663194*^9, 3.92320831316522*^9}, {
+   3.923208479535786*^9, 3.923208479748563*^9}, {3.923208510750115*^9, 
+   3.923208514914443*^9}, 3.936318855960565*^9, 3.936319642366455*^9, {
+   3.936354437096813*^9, 
+   3.936354509771055*^9}},ExpressionUUID->"719c09da-661d-4554-85c3-\
+431801bd10fc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", 
+  RowBox[{"\"\<ClO3+Cl+H->ClO2+Cl2+H2O\>\"", ",", 
+   RowBox[{"\"\<Charge\>\"", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}]}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{
+  3.936319330585846*^9, {3.9363195161671677`*^9, 3.9363195253711033`*^9}, 
+   3.9363197300864487`*^9, 3.936320314035228*^9, 3.936320366580633*^9, {
+   3.936320451436722*^9, 3.936320455346882*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"7810b94a-ff39-be49-8714-4abf89f94b5d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+Cl\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+H\\!\\(\\*SuperscriptBox[\\(\\), \\(+1\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"}]], "Print",
+ CellChangeTimes->{
+  3.936319331486606*^9, {3.936319730936521*^9, 3.9363197684414215`*^9}, 
+   3.936319866549785*^9, {3.9363203118302135`*^9, 3.936320314841745*^9}, {
+   3.936320367336914*^9, 3.936320370766857*^9}, {3.9363204280968933`*^9, 
+   3.9363204560069847`*^9}, 3.936321979078151*^9, 3.936354329455591*^9, 
+   3.937134371373476*^9, {3.938151041666386*^9, 3.938151048444023*^9}, 
+   3.938151424091767*^9, 3.93815412914647*^9, 3.9381705342287846`*^9, 
+   3.938170566009012*^9, 3.9384962252944756`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[4]:=",ExpressionUUID->"ae6289fa-5ab1-4591-8090-\
+073951514401"],
+
+Cell[BoxData["\<\"Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+5Cl\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+6H\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(+1\\)]\\)=3\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+2Cl\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+4H\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(+1\\)]\\)=2Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n5Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+Cl\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(-1\\)]\\)+6H\\!\\(\\*SuperscriptBox[\\(\\), \
+\\(+1\\)]\\)=6Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{
+  3.936319331486606*^9, {3.936319730936521*^9, 3.9363197684414215`*^9}, 
+   3.936319866549785*^9, {3.9363203118302135`*^9, 3.936320314841745*^9}, {
+   3.936320367336914*^9, 3.936320370766857*^9}, {3.9363204280968933`*^9, 
+   3.9363204560069847`*^9}, 3.936321979078151*^9, 3.936354329455591*^9, 
+   3.937134371373476*^9, {3.938151041666386*^9, 3.938151048444023*^9}, 
+   3.938151424091767*^9, 3.93815412914647*^9, 3.9381705342287846`*^9, 
+   3.938170566009012*^9, 3.938496225296481*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[4]:=",ExpressionUUID->"b2688d2c-9ddb-4b6a-b6f9-\
+a7e84de54571"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"balanceMatrix", "[", 
+  RowBox[{"\"\<ClO3+Cl+H->ClO2+Cl2+H2O\>\"", ",", 
+   RowBox[{"\"\<Charge\>\"", "->", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}]}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.936354792744444*^9, 3.936354848942159*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"0f19b7a4-2453-4440-baa0-1ad4882ca44e"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"M\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "0", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", 
+        RowBox[{"-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0"}], "}"}]}],
+      "}"}]}], ",", 
+   RowBox[{"\<\"Elements\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>", 
+      ",", "\<\"Charge\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"Compounds\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"ClO3\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "3"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", 
+             RowBox[{"-", "1"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"Cl\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", 
+             RowBox[{"-", "1"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"H\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}], ",", 
+      RowBox[{"2", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"ClO2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", "0"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"Cl2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", "0"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"H2O\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"Charge\"\>", "\[Rule]", "0"}]}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"TableHead\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\<\"ClO3\"\>", ",", "\<\"Cl\"\>", ",", "\<\"H\"\>", 
+        ",", "\<\"ClO2\"\>", ",", "\<\"Cl2\"\>", ",", "\<\"H2O\"\>"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>", 
+        ",", "\<\"Charge\"\>"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"Null\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"5", ",", "1", ",", "6", ",", "6", ",", "0", ",", "3"}], "}"}],
+       ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "4"}], ",", "4", ",", "0", ",", 
+        RowBox[{"-", "6"}], ",", "3", ",", "0"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"HilbertBasis\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"N\"\>", "\[Rule]", "3"}], ",", 
+      RowBox[{"\<\"Hilb\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"1", ",", "5", ",", "6", ",", "0", ",", "3", ",", "3"}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"2", ",", "2", ",", "4", ",", "2", ",", "1", ",", "2"}], 
+          "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"5", ",", "1", ",", "6", ",", "6", ",", "0", ",", "3"}], 
+          "}"}]}], "}"}]}]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{
+  3.936354802098864*^9, 3.936354851714379*^9, {3.938151043558048*^9, 
+   3.938151048578575*^9}, 3.938154130590474*^9, 3.9381705371668663`*^9, 
+   3.938170568279175*^9, 3.9384962255310907`*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"5e550ed1-34d5-4269-8714-8a8cf932334e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["NH4ClO4 + HNO3 + HCl + H2O -> H5ClO6 + N2O + NO + NO2 + Cl2", \
+"Subsection",
+ CellChangeTimes->{
+  3.936354520322098*^9},ExpressionUUID->"572f2a9b-27cf-b04c-bba2-\
+13dc35639351"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", 
+  "\"\<NH4ClO4+HNO3+HCl+H2O->H5ClO6+N2O+NO+NO2+Cl2\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.936321202727822*^9, 3.936321206667618*^9}, 
+   3.936354311272293*^9},
+ CellLabel->"In[6]:=",ExpressionUUID->"645d071f-f855-7b48-bbe3-a263e4a5fb0d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"N\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(4\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HCl+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+NO+N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \\(2\\)]\\)\"\>"}]], "Print",
+ CellChangeTimes->{
+  3.936354312463785*^9, 3.938151048706208*^9, 3.938154133090275*^9, {
+   3.9381705700290966`*^9, 3.938170588008774*^9}, 3.938496225717927*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[6]:=",ExpressionUUID->"2c2d3e59-abbf-44de-acbe-\
+39832a2599c9"],
+
+Cell[BoxData["\<\"2HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HCl+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O\\n4HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HCl=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+2NO+2N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n6HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2HCl+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+5NO+N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n6HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4HCl=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+6NO+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n6HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4HCl=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+3NO+N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n6HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4HCl=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+2\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+2N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n8HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2HCl=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+NO+5N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n8HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3HCl+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+8NO\\n8HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7HCl=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+2\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+4NO+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n8HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7HCl=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+3\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+NO+N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n10HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+10HCl=4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+4\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+2NO+3\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n12HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3HCl=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+2\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+8N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n12HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+13HCl=5\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+6\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\nN\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(4\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)O\\nN\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(4\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+5HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HCl=2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+5NO+N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\nN\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(4\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+7HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2HCl+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(6\\)]\\)+8NO\\n2N\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(4\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+6HN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HCl=3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)Cl\\!\\(\\*SubscriptBox[\\(O\\), \\(6\\)]\\)+8NO\"\>"], "Print",
+ CellChangeTimes->{
+  3.936354312463785*^9, 3.938151048706208*^9, 3.938154133090275*^9, {
+   3.9381705700290966`*^9, 3.938170588008774*^9}, 3.938496225724677*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[6]:=",ExpressionUUID->"0af1a383-f715-4402-8e30-\
+9d2269d16a88"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"balanceMatrix", "[", 
+  "\"\<NH4ClO4+HNO3+HCl+H2O->H5ClO6+N2O+NO+NO2+Cl2\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.9363548728604536`*^9},
+ CellLabel->"In[7]:=",ExpressionUUID->"d1b9b899-1387-fc4a-9008-7fd67721e6f3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"M\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "1", ",", "0", ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "1", ",", "1", ",", "2", ",", 
+        RowBox[{"-", "5"}], ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "1", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4", ",", "3", ",", "0", ",", "1", ",", 
+        RowBox[{"-", "6"}], ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "2"}], ",", "0"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"Elements\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"N\"\>", 
+      ",", "\<\"O\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"Compounds\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"NH4ClO4\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"N\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"H\"\>", "\[Rule]", "4"}], ",", 
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "4"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"HNO3\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"N\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "3"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"HCl\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"H2O\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}], ",", 
+      RowBox[{"2", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"H5ClO6\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "5"}], ",", 
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "6"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"N2O\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"N\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"NO\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"N\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"NO2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"N\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "2"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"Cl2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{"\<\"Cl\"\>", "\[Rule]", "2"}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"TableHead\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\<\"NH4ClO4\"\>", ",", "\<\"HNO3\"\>", ",", "\<\"HCl\"\>", 
+        ",", "\<\"H2O\"\>", ",", "\<\"H5ClO6\"\>", ",", "\<\"N2O\"\>", 
+        ",", "\<\"NO\"\>", ",", "\<\"NO2\"\>", ",", "\<\"Cl2\"\>"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"N\"\>", 
+        ",", "\<\"O\"\>"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"Null\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", "6", ",", "13", ",", "0", ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "4"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "10", ",", "3", ",", "0", ",", "1", ",", "0",
+         ",", "0", ",", "8", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "2", ",", "6", ",", "1", ",", "0", ",", "3", ",", "0", ",", "8", ",", 
+        "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", ",", 
+        "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1", ",", "1", ",", "1", ",", "0", ",", "0", 
+        ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"HilbertBasis\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"N\"\>", "\[Rule]", "17"}], ",", 
+      RowBox[{"\<\"Hilb\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "2", ",", "1", ",", "1", ",", "1", ",", "1", ",", "0", 
+           ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "4", ",", "1", ",", "0", ",", "1", ",", "0", ",", "2", 
+           ",", "2", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "6", ",", "2", ",", "1", ",", "2", ",", "0", ",", "5", 
+           ",", "1", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "6", ",", "4", ",", "0", ",", "2", ",", "0", ",", "6", 
+           ",", "0", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "6", ",", "4", ",", "0", ",", "2", ",", "1", ",", "3", 
+           ",", "1", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "6", ",", "4", ",", "0", ",", "2", ",", "2", ",", "0", 
+           ",", "2", ",", "1"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "8", ",", "2", ",", "0", ",", "2", ",", "1", ",", "1", 
+           ",", "5", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "8", ",", "3", ",", "2", ",", "3", ",", "0", ",", "8", 
+           ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "8", ",", "7", ",", "0", ",", "3", ",", "2", ",", "4", 
+           ",", "0", ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "8", ",", "7", ",", "0", ",", "3", ",", "3", ",", "1", 
+           ",", "1", ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "10", ",", "10", ",", "0", ",", "4", ",", "4", ",", "2", 
+           ",", "0", ",", "3"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "12", ",", "3", ",", "0", ",", "3", ",", "2", ",", "0", 
+           ",", "8", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "0", ",", "12", ",", "13", ",", "0", ",", "5", ",", "6", ",", "0", 
+           ",", "0", ",", "4"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "1", ",", "0", ",", "0", ",", "1", ",", "1", ",", "0", 
+           ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "5", ",", "1", ",", "0", ",", "2", ",", "0", ",", "5", 
+           ",", "1", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "1", ",", "7", ",", "2", ",", "1", ",", "3", ",", "0", ",", "8", 
+           ",", "0", ",", "0"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "2", ",", "6", ",", "1", ",", "0", ",", "3", ",", "0", ",", "8", 
+           ",", "0", ",", "0"}], "}"}]}], "}"}]}]}], 
+     "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.936354873846218*^9, 3.9381510488472633`*^9, 
+  3.938496225888365*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"45fc77a7-88f3-4475-8296-e16d89d2b519"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["HClO3 -> HClO4 + Cl2 + O2 + H2O -> Cl2 + O2 + H2O", "Subsection",
+ CellChangeTimes->{{3.936354520322098*^9, 
+  3.9363545347728157`*^9}},ExpressionUUID->"711a6d7b-94b9-b049-8b51-\
+c85106259490"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", "\"\<HClO3->HClO4+Cl2+O2+H2O->Cl2+O2+H2O\>\"",
+   "]"}]], "Input",
+ CellChangeTimes->{{3.9232619431498923`*^9, 3.9232619502941833`*^9}, {
+  3.936354357832678*^9, 3.9363543581337337`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"f31a9130-c114-4f25-98ea-d289814dba77"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"HCl\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\"\>"}]], "Print",
+ CellChangeTimes->{{3.923261945190051*^9, 3.9232619510188413`*^9}, 
+   3.936354358946377*^9, 3.9381510490201817`*^9, 3.9384962260452557`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[8]:=",ExpressionUUID->"f7947b3f-491f-46db-bf19-\
+e59bfe5e60a8"],
+
+Cell[BoxData["\<\"4HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+5\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+5\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n8HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=4HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+10\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n12HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=8HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=6\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+15\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n28HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=20HCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=14\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+35\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+14\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{{3.923261945190051*^9, 3.9232619510188413`*^9}, 
+   3.936354358946377*^9, 3.9381510490201817`*^9, 3.938496226051011*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[8]:=",ExpressionUUID->"603da9af-7146-4d10-b576-\
+a0c042d84370"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"balanceMatrix", "[", "\"\<HClO3->HClO4+Cl2+O2+H2O->Cl2+O2+H2O\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{3.9363548998610535`*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"d0c7b4fc-f7b8-1f4f-8631-582468dcbdc8"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"M\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", 
+        RowBox[{"-", "4"}], ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "2", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "0", ",", "1", ",", "0", ",", "0", ",", "2", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "4", ",", "0", ",", "2", ",", "1", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"\<\"Elements\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>"}], "}"}]}], ",", 
+   RowBox[{"\<\"Compounds\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"1", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{"\<\"HClO3\"\>", "\[Rule]", 
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"H\"\>", "\[Rule]", "1"}], ",", 
+           RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+           RowBox[{"\<\"O\"\>", "\[Rule]", "3"}]}], "\[RightAssociation]"}]}],
+         "\[RightAssociation]"}]}], ",", 
+      RowBox[{"2", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"HClO4\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"Cl\"\>", "\[Rule]", "1"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "4"}]}], 
+           "\[RightAssociation]"}]}], ",", 
+         RowBox[{"\<\"Cl2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{"\<\"Cl\"\>", "\[Rule]", "2"}], "\[RightAssociation]"}]}], 
+         ",", 
+         RowBox[{"\<\"O2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{"\<\"O\"\>", "\[Rule]", "2"}], "\[RightAssociation]"}]}], 
+         ",", 
+         RowBox[{"\<\"H2O\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}], ",", 
+      RowBox[{"3", "\[Rule]", 
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"\<\"Cl2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{"\<\"Cl\"\>", "\[Rule]", "2"}], "\[RightAssociation]"}]}], 
+         ",", 
+         RowBox[{"\<\"O2\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{"\<\"O\"\>", "\[Rule]", "2"}], "\[RightAssociation]"}]}], 
+         ",", 
+         RowBox[{"\<\"H2O\"\>", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"\<\"H\"\>", "\[Rule]", "2"}], ",", 
+            RowBox[{"\<\"O\"\>", "\[Rule]", "1"}]}], 
+           "\[RightAssociation]"}]}]}], "\[RightAssociation]"}]}]}], 
+     "\[RightAssociation]"}]}], ",", 
+   RowBox[{"\<\"TableHead\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"\<\"HClO3\"\>", ",", "\<\"HClO4\"\>", ",", "\<\"Cl2\"\>", 
+        ",", "\<\"O2\"\>", ",", "\<\"H2O\"\>", ",", "\<\"Cl2\"\>", 
+        ",", "\<\"O2\"\>", ",", "\<\"H2O\"\>"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>", 
+        ",", "\<\"Cl\"\>", ",", "\<\"H\"\>", ",", "\<\"O\"\>"}], "}"}]}], 
+     "}"}]}], ",", 
+   RowBox[{"\<\"Null\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "4"}], ",", 
+        RowBox[{"-", "4"}], ",", "0", ",", "2", ",", "0", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "5"}], ",", 
+        RowBox[{"-", "2"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "4", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "7"}], ",", 
+        RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+   ",", 
+   RowBox[{"\<\"HilbertBasis\"\>", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{
+      RowBox[{"\<\"N\"\>", "\[Rule]", "4"}], ",", 
+      RowBox[{"\<\"Hilb\"\>", "\[Rule]", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+          "4", ",", "0", ",", "2", ",", "5", ",", "2", ",", "2", ",", "5", 
+           ",", "2"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "8", ",", "4", ",", "2", ",", "3", ",", "2", ",", "4", ",", "10", 
+           ",", "4"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "12", ",", "8", ",", "2", ",", "1", ",", "2", ",", "6", ",", "15", 
+           ",", "6"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "28", ",", "20", ",", "4", ",", "0", ",", "4", ",", "14", ",", "35",
+            ",", "14"}], "}"}]}], "}"}]}]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.936354900820357*^9, 3.938151049180311*^9, 
+  3.9384962262252417`*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"55beb263-050e-4846-81e0-f1e0f94e7836"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+C2H5NO2 + C3H7NO3 + C6H14N4O2 + C5H9NO2 + C9H11NO2 -> H2O + C50H73N15O11\
+\>", "Subsection",
+ CellChangeTimes->{
+  3.9363545618218*^9},ExpressionUUID->"41ab16d2-685a-c14f-9f31-05a8ae568276"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", 
+  "\"\<C2H5NO2+C3H7NO3+C6H14N4O2+C5H9NO2+C9H11NO2->H2O+C50H73N15O11\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.923214376810301*^9, 3.923214411737149*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"9f6482b9-d873-4eef-bdc9-9f30c1b362af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(11\\)]\\)\"\>"}]], \
+"Print",
+ CellChangeTimes->{3.923214412524579*^9, 3.923214555201048*^9, 
+  3.923230705256529*^9, 3.9363543799593067`*^9, 3.9381510493520927`*^9, 
+  3.9384962264423323`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[10]:=",ExpressionUUID->"7f2b8eec-62ca-4f04-aea4-\
+64a79b10d944"],
+
+Cell[BoxData["\<\"8\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+15\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+19\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=32\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n9\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+14\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+9\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+16\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=39\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+15\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=46\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n11\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+21\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=53\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+11\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+27\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+7\\!\\(\\*SubscriptBox[\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=60\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+33\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=67\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n14\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+9\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+39\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=74\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n15\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+31\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+41\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=57\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n43\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+26\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+123\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=229\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+18\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=8\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+8\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+18\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+24\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=33\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+7\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+16\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+48\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=89\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+7\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+7\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=9\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=23\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+5\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+21\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=38\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n9\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+18\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=33\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+7\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+15\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+7\\!\\(\\*SubscriptBox[\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=34\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+4\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+27\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=48\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+4\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n11\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=35\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+5\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n11\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+6\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+36\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=63\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+5\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+9\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+17\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=36\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+16\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+22\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=37\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+7\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n14\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+19\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+27\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=38\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+8\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n15\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+22\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+32\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(11\\)]\\)N\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)=39\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+9\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n18\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+42\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=73\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+6\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n19\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+8\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+51\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=88\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+7\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n26\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+9\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+57\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(9\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(11\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=98\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+8\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n27\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+10\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+66\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=113\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+9\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n35\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(7\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+12\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+81\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=138\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+11\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(11\\)]\\)\\n43\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(5\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+14\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(6\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(14\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(4\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+96\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(5\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(9\\)]\\)N\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=163\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+13\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(50\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(73\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(N\\), \\(15\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(11\\)]\\)\"\>"], \
+"Print",
+ CellChangeTimes->{3.923214412524579*^9, 3.923214555201048*^9, 
+  3.923230705256529*^9, 3.9363543799593067`*^9, 3.9381510493520927`*^9, 
+  3.9384962264576607`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[10]:=",ExpressionUUID->"1ce3109e-a66c-4b0d-9302-\
+6dc158ba9eea"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Na + Na2O -> Na2O2", "Subsection",
+ CellChangeTimes->{
+  3.9363546023317623`*^9},ExpressionUUID->"bed5adb1-e6b4-c743-98e1-\
+f75f935f67e1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", "\"\<Na+Na2O->Na2O2\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.923208790197521*^9, 3.923211207438638*^9},
+ CellLabel->"In[11]:=",ExpressionUUID->"9097f44b-7150-427b-b6b4-a3fd6a49aa6a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"Na+\\!\\(\\*SubscriptBox[\\(Na\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"}]], "Print",
+ CellChangeTimes->{
+  3.9232112093635235`*^9, 3.923211543455971*^9, {3.923212149187075*^9, 
+   3.923212153457765*^9}, {3.9232128725748444`*^9, 3.923212875023901*^9}, 
+   3.923212937968143*^9, 3.936354385192724*^9, 3.938151049453499*^9, 
+   3.938496226574028*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[11]:=",ExpressionUUID->"a71bf6d9-661c-430e-b7cd-\
+b3ba291ebe20"],
+
+Cell[BoxData["\<\"Can not be balanced.\"\>"], "Print",
+ CellChangeTimes->{
+  3.9232112093635235`*^9, 3.923211543455971*^9, {3.923212149187075*^9, 
+   3.923212153457765*^9}, {3.9232128725748444`*^9, 3.923212875023901*^9}, 
+   3.923212937968143*^9, 3.936354385192724*^9, 3.938151049453499*^9, 
+   3.938496226581704*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[11]:=",ExpressionUUID->"ec1917b0-046f-4fe5-977f-\
+075329c45dd7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["AB + BC -> AB3C", "Subsection",
+ CellChangeTimes->{
+  3.9363546175118237`*^9},ExpressionUUID->"e751d403-86e1-9f4f-a6dd-\
+55afa24e3c92"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", "\"\<AB+BC->AB3C\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.923208856088885*^9, 3.9232112080923214`*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"3f83ae5e-cf1b-4368-9fde-f50a45d39ccb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"AB+BC\"\>", 
+  "\[RightArrow]", "\<\"A\\!\\(\\*SubscriptBox[\\(B\\), \\(3\\)]\\)C\"\>"}]], \
+"Print",
+ CellChangeTimes->{{3.923208883790636*^9, 3.9232089341763773`*^9}, 
+   3.923211210907561*^9, 3.923212155056573*^9, 3.923212871458579*^9, 
+   3.923212939903569*^9, 3.936354387567671*^9, 3.9381510494594727`*^9, 
+   3.9384962265963993`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[12]:=",ExpressionUUID->"b61fd4f1-0d20-4787-bb9d-\
+08fa04e21879"],
+
+Cell[BoxData["\<\"Can not be balanced.\"\>"], "Print",
+ CellChangeTimes->{{3.923208883790636*^9, 3.9232089341763773`*^9}, 
+   3.923211210907561*^9, 3.923212155056573*^9, 3.923212871458579*^9, 
+   3.923212939903569*^9, 3.936354387567671*^9, 3.9381510494594727`*^9, 
+   3.9384962265991*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[12]:=",ExpressionUUID->"562aa5a9-5179-4d70-b01a-\
+50664bae13ef"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+K2Cr2O7 + MnSO4 + CO2 + KNO3 + K2SO4 + H2O -> Cr7N66H96C42O24 + KMnO4 + H2SO4\
+\>", "Subsection",
+ CellChangeTimes->{
+  3.9363546405102234`*^9, 3.936355002272476*^9, {3.936355051531048*^9, 
+   3.9363550586624813`*^9}},ExpressionUUID->"9c7281e0-5921-0c44-9ae3-\
+c2e737f40f24"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "@", 
+  "\"\<K2Cr2O7 + MnSO4 + CO2 + KNO3 + K2SO4 + H2O -> Cr7N66H96C42O24 + KMnO4 \
++ H2SO4\>\""}]], "Input",
+ CellChangeTimes->{{3.936355021132133*^9, 3.93635504158332*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"159cff40-92d0-5642-ac50-d4c16fa28c2f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(7\\)]\\)+MnS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(K\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(7\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(66\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(96\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(42\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(24\\)]\\)+KMn\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)\"\>"}]], "Print",
+ CellChangeTimes->{{3.936355024620004*^9, 3.936355060110628*^9}, 
+   3.938151049611122*^9, 3.9384962267917943`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[13]:=",ExpressionUUID->"1bb848b7-6050-4bb5-9a8c-\
+becbae573a45"],
+
+Cell[BoxData["\<\"35\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(7\\)]\\)+1176MnS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+420C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+660KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+223\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+1879\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=10\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(7\\)]\\)\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(66\\)]\\)\\!\\(\\*SubscriptBox[\\(H\\), \\(96\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(C\\), \\(42\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(24\\)]\\)+1176KMn\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+1399\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)\"\>"], "Print",
+ CellChangeTimes->{{3.936355024620004*^9, 3.936355060110628*^9}, 
+   3.938151049611122*^9, 3.9384962267938194`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[13]:=",ExpressionUUID->"3a8aafdf-3ac4-4cad-bf41-\
+4d7d96d3ce4b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["KNO3 + C + S -> K2S2 + CO2 + CO + N2", "Subsection",
+ CellChangeTimes->{
+  3.9363546522518387`*^9},ExpressionUUID->"cf9af060-2e81-5741-8fc9-\
+66c33cdf49cc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"HilbertBalance", "@", "\"\<KNO3+C+S->K2S2+CO2+CO+N2\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.923211646005787*^9, 3.92321164739069*^9}, 
+   3.923211734726438*^9, 3.923211803258514*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"8c46f1b2-16bb-4153-b768-238cdadcf304"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"KN\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+C+S\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(S\\), \\(2\\)]\\)+C\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)+CO+\\!\\(\\*SubscriptBox[\\(N\\), \\(2\\)]\\)\"\>"}]], \
+"Print",
+ CellChangeTimes->{{3.9232116386686735`*^9, 3.923211653516414*^9}, {
+   3.923211685478193*^9, 3.9232117586834793`*^9}, 3.923211804282026*^9, 
+   3.9232121614444847`*^9, 3.92321296686383*^9, 3.9363544011166344`*^9, 
+   3.938151049757223*^9, 3.9384962269609365`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[14]:=",ExpressionUUID->"6db843ce-bb5c-4c27-9f73-\
+673d681cd7e8"],
+
+Cell[BoxData["\<\"2KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3C+2S=\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(S\\), \
+\\(2\\)]\\)+3C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)\\n2KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4C+2S=\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(S\\), \
+\\(2\\)]\\)+2C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2CO+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)\\n2KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5C+2S=\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(S\\), \\(2\\)]\\)+C\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(2\\)]\\)+4CO+\\!\\(\\*SubscriptBox[\\(N\\), \
+\\(2\\)]\\)\\n2KN\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+6C+2S=\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(S\\), \
+\\(2\\)]\\)+6CO+\\!\\(\\*SubscriptBox[\\(N\\), \\(2\\)]\\)\"\>"], "Print",
+ CellChangeTimes->{{3.9232116386686735`*^9, 3.923211653516414*^9}, {
+   3.923211685478193*^9, 3.9232117586834793`*^9}, 3.923211804282026*^9, 
+   3.9232121614444847`*^9, 3.92321296686383*^9, 3.9363544011166344`*^9, 
+   3.938151049757223*^9, 3.9384962269639435`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[14]:=",ExpressionUUID->"89f4ad3e-95d1-4dfd-8981-\
+65d4a53bcdb5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+KClO + KClO3 + HSO4 + Cl2 + K2SO4 + KCl + H2O -> KClO + KClO3 + HSO4 + Cl2 + \
+K2SO4 + KCl + H2O\
+\>", "Subsection",
+ CellChangeTimes->{
+  3.9363546602737293`*^9},ExpressionUUID->"8eac7570-b284-154d-aba2-\
+e71644c7843b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "HilbertBalance", "@", 
+   "\"\<KClO+KClO3+HSO4+Cl2+K2SO4+KCl+H2O->KClO+KClO3+HSO4+Cl2+K2SO4+KCl+H2O\>\
+\""}], ";"}]], "Input",
+ CellLabel->"In[15]:=",ExpressionUUID->"b9da5d66-e100-4305-8617-c29ffee09a29"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"KClO+KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(K\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)+KCl+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"KClO+KCl\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+HS\
+\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(K\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)+KCl+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"}]], \
+"Print",
+ CellChangeTimes->{3.923211814575894*^9, 3.9232129551813493`*^9, 
+  3.936354404005316*^9, 3.9381510499443684`*^9, 3.938496227191213*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[15]:=",ExpressionUUID->"34e063f3-5321-463a-87ae-\
+ec91fa5adb78"],
+
+Cell[BoxData["\<\"\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\nKCl=KCl\\n\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)=\\!\\(\\*SubscriptBox[\
+\\(K\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)=\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)\\n2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O=KClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+3KCl\
+\\n6\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+6HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+11KCl\\nHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2KCl=3KClO\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O=4KClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+KCl\
+\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+5KCl=2KClO+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+8KCl=KClO+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\nKCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+6HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+11KCl=6\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+KCl+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=7KClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)\\n3KCl\\!\\(\
+\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=11KClO+4HS\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)\\nKClO=KClO\
+\\nKClO+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+8KCl\\nKClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+3KCl=2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\\n2KClO+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O=KCl\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2HS\\!\\(\
+\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+5KCl\\n3KClO=KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2KCl\\n4KClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+KCl=KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\\n7KClO+2HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=2KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+KCl+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n11KClO+4HS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=3KCl\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Cl\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{3.923211814575894*^9, 3.9232129551813493`*^9, 
+  3.936354404005316*^9, 3.9381510499443684`*^9, 3.9384962271932154`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[15]:=",ExpressionUUID->"ba2719a2-2abe-4a76-94b2-\
+da1674728112"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Br2 + Na2CO3 + NaOH + NaBr + NaBrO3 + NaBrO + C2O + H2O -> Br2 + Na2CO3 + \
+NaOH + NaBr + NaBrO3 + NaBrO + C2O + H2O\
+\>", "Subsection",
+ CellChangeTimes->{
+  3.936354668597233*^9},ExpressionUUID->"4d5dce44-c69d-914d-b428-\
+a193df853854"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "HilbertBalance", "@", 
+   "\"\<Br2+Na2CO3+NaOH+NaBr+NaBrO3+NaBrO+C2O+H2O->Br2+Na2CO3+NaOH+NaBr+\
+NaBrO3+NaBrO+C2O+H2O\>\""}], ";"}]], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"cbfbba85-d413-4433-92a7-06ad9ef6ca5d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaOH+NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>", 
+  "\[RightArrow]", "\<\"\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaOH+NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"}]], "Print",
+ CellChangeTimes->{3.923211825422231*^9, 3.923212957054528*^9, 
+  3.9363544079315624`*^9, 3.938151050202814*^9, 3.9384962275307755`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[16]:=",ExpressionUUID->"b065f42c-7edc-42cc-9c4a-\
+473e1922bfa7"],
+
+Cell[BoxData["\<\"\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\nNaBrO=NaBrO\\n3NaBrO=2NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\n4NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2NaOH+NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\n5NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4NaOH+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\\n5NaBrO+\\!\
+\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBr\\n6NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaOH\\nNaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)=NaBr\\!\\(\
+\\*SubscriptBox[\\(O\\), \\(3\\)]\\)\\nNaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7NaBrO+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=4\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\nNaBr=NaBr\\nNaBr+NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \\(2\\)]\\)+2NaOH\\nNaBr+NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\n2NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=3NaBrO\\n3NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\
+\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \\(2\
+\\)]\\)+2NaOH+2NaBrO\\n3NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\
+\\!\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO\\n4NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2\\!\
+\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4NaOH+NaBrO\\n4NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2NaOH\\n4NaBr+3NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+NaBrO+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=4\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\n5NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \\(2\\)]\\)+6NaOH\\n7NaBr+5NaBr\
+\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=6\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\nNaOH=NaOH\\n2NaOH+4NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBr+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\\n2NaOH+NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\\n2NaOH+2NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2NaOH+3NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O\\n4NaOH+3NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBr+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n4NaOH+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBr+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n4NaOH+NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\
+\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n4NaOH+2NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n6NaOH+NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n6NaOH+2NaBr+4NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n8NaOH+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBrO+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n8NaOH+NaBr+4NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+4\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\\n10NaOH+4NaBr\
+\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+5\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n10NaOH+NaBr+5NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\\n12NaOH+5NaBr\\!\\(\
+\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\
+\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+6\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\\n14NaOH+6NaBr\
+\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+10\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)=\\!\\(\\*SubscriptBox[\
+\\(Na\\), \\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=4NaOH+NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4NaBrO+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6NaOH+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBr+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=4NaOH+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBr+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=4NaOH+3NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4NaBr+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6NaOH+2NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5NaBr+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8NaOH+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O\\n2\\!\\(\
+\\*SubscriptBox[\\(Na\\), \\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\
+\\)+6NaBr+5\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+10NaOH+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3NaBrO+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=8NaOH+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)=\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2NaOH=NaBr+NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2NaOH+2NaBrO=3NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \\(2\\)]\\)+2NaOH+NaBr+NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)=4NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6NaOH+2NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4NaBr+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6NaOH+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4NaBrO+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O=2NaOH+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2NaOH+2NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBr+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=2NaOH+4NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=6NaOH+NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaBrO+5\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=10NaOH+4NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4NaOH+NaBrO=4NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4NaOH+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=5NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8NaOH+NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5NaBr+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2NaBrO+\\!\\(\
+\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \\(2\
+\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO=3NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBr=5NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O\\n2\\!\\(\
+\\*SubscriptBox[\\(Br\\), \\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=4NaOH+2NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+2\\!\
+\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=8NaOH+NaBr+4NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n2\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+6\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=12NaOH+5NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6NaOH=5NaBr+NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+10NaOH+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O=2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+6NaBr+5\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaOH=6NaBrO+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+2\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2NaOH=4NaBr+2NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O=2NaOH+3NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O=6NaOH+2NaBr+4NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+8\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O=10NaOH+NaBr+5NaBr\\!\
+\\(\\*SubscriptBox[\\(O\\), \\(3\\)]\\)+4\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n3\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+10\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O=14NaOH+6NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+5\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n4\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+7NaBrO+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n4\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=4NaBr+3NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+NaBrO+2\\!\\(\\*SubscriptBox[\\(C\\), \
+\\(2\\)]\\)O\\n6\\!\\(\\*SubscriptBox[\\(Br\\), \
+\\(2\\)]\\)+6\\!\\(\\*SubscriptBox[\\(Na\\), \
+\\(2\\)]\\)C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)=7NaBr+5NaBr\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+3\\!\\(\\*SubscriptBox[\\(C\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{3.923211825422231*^9, 3.923212957054528*^9, 
+  3.9363544079315624`*^9, 3.938151050202814*^9, 3.9384962275502796`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[16]:=",ExpressionUUID->"7d969d28-c71b-444e-94b9-\
+74771308ad73"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["GeO2 + HF -> GeF4 + H2GeF6 + H2O", "Subsection",
+ CellChangeTimes->{
+  3.9363546823451805`*^9},ExpressionUUID->"91bf5177-9ac6-5d4d-909c-\
+91d2361451c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", "\"\<GeO2+HF->GeF4+H2GeF6+H2O\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[17]:=",ExpressionUUID->"b5a3b6e9-ea29-43c8-9544-c098d8f2f440"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"Ge\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+HF\"\>", 
+  "\[RightArrow]", "\<\"Ge\\!\\(\\*SubscriptBox[\\(F\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)Ge\\!\\(\\*SubscriptBox[\\(F\\), \
+\\(6\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"}]], "Print",
+ CellChangeTimes->{3.923212118342838*^9, 3.92321296054333*^9, 
+  3.936354411574184*^9, 3.9381510503526516`*^9, 3.9384962277195444`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[17]:=",ExpressionUUID->"6bed3185-35f3-4697-8bf0-\
+f566eeae586a"],
+
+Cell[BoxData["\<\"Ge\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+4HF=Ge\\!\\(\\*SubscriptBox[\\(F\\), \
+\\(4\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O\\nGe\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+6HF=\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)Ge\\!\\(\\*SubscriptBox[\\(F\\), \
+\\(6\\)]\\)+2\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{3.923212118342838*^9, 3.92321296054333*^9, 
+  3.936354411574184*^9, 3.9381510503526516`*^9, 3.9384962277215242`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[17]:=",ExpressionUUID->"18f4ab0b-ce3d-405f-a1b3-\
+944e9478220a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["C + O2 -> C + O2 + CO + CO2 -> CO2", "Subsection",
+ CellChangeTimes->{
+  3.936354688174669*^9},ExpressionUUID->"b8f9730a-e506-9c48-a1e5-\
+b5e3f67f1257"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", "\"\<C+O2->C+O2+CO+CO2->CO2\>\"", 
+  RowBox[{"(*", 
+   RowBox[{",", 
+    RowBox[{"\"\<Format\>\"", "->", "\"\<TeX\>\""}]}], "*)"}], "]"}]], "Input",
+ CellChangeTimes->{{3.923187376196044*^9, 3.923187402431332*^9}, {
+   3.923190914231047*^9, 3.923190972362007*^9}, {3.923191129530465*^9, 
+   3.923191157254771*^9}, {3.923191201355388*^9, 3.923191239228571*^9}, {
+   3.923191502772834*^9, 3.9231915092535152`*^9}, {3.923191678656125*^9, 
+   3.923191679360076*^9}, {3.923191872033347*^9, 3.923191885470177*^9}, {
+   3.9231920616019936`*^9, 3.923192061836141*^9}, 3.92320761872501*^9, 
+   3.92321035659861*^9, {3.923229871301364*^9, 3.923229901464197*^9}, 
+   3.923259650408993*^9, {3.9363550894942684`*^9, 3.936355094557531*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"bc62e85d-4eec-40b9-9ce5-f13fe8b34ed7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"C+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"C+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+CO+C\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"C\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"}]], \
+"Print",
+ CellChangeTimes->{
+  3.9363191087956924`*^9, 3.936354297621523*^9, 3.936354351693683*^9, 
+   3.9363544279044933`*^9, {3.93635509011207*^9, 3.9363550951579437`*^9}, 
+   3.937134853913962*^9, 3.938151050482172*^9, 3.938496227893921*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[18]:=",ExpressionUUID->"1d7787e4-f44a-4eb5-b41d-\
+468d0ac0c1be"],
+
+Cell[BoxData["\<\"C+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\nC+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=C+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=C\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n2C+2\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)=\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+2CO=2C\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"], "Print",
+ CellChangeTimes->{
+  3.9363191087956924`*^9, 3.936354297621523*^9, 3.936354351693683*^9, 
+   3.9363544279044933`*^9, {3.93635509011207*^9, 3.9363550951579437`*^9}, 
+   3.937134853913962*^9, 3.938151050482172*^9, 3.938496227899106*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[18]:=",ExpressionUUID->"cb2eced1-1c29-4633-ab7b-\
+595e8efbf04b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["KMnO4 + H2O2 + H2SO4 -> KHSO4 + MnSO4 + H2O + O2", "Subsection",
+ CellChangeTimes->{{3.937134482954521*^9, 
+  3.937134484373581*^9}},ExpressionUUID->"a7d6b92f-726e-3749-b2c1-\
+1e993b5d45ec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", 
+  "\"\<KMnO4+ H2O2 + H2SO4->KHSO4 +MnSO4 + H2O +O2\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.9371343949942684`*^9, 3.937134485663835*^9}, 
+   3.93713457466378*^9, {3.937134627663826*^9, 3.9371346287875433`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"efdef552-6727-764f-8f64-4408351283c6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"KMn\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"KHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+MnS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"}]], "Print",
+ CellChangeTimes->{{3.9371344357045784`*^9, 3.937134486463553*^9}, 
+   3.937134851087036*^9, 3.938151050655775*^9, 3.938496228087573*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[19]:=",ExpressionUUID->"0c771ccf-a1c7-4be5-b4fb-\
+a4bef5e2a3a9"],
+
+Cell[BoxData["\<\"2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)=2\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\\n2KMn\\!\\(\
+\\*SubscriptBox[\\(O\\), \\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+4\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=2KHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+2MnS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+4\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+3\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n4KMn\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+8\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=4KHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+4MnS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+6\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+5\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"], "Print",
+ CellChangeTimes->{{3.9371344357045784`*^9, 3.937134486463553*^9}, 
+   3.937134851087036*^9, 3.938151050655775*^9, 3.938496228089038*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[19]:=",ExpressionUUID->"29296a42-ff75-44d8-9a6c-\
+74983a9084f3"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["K2Cr2O3+ H2O2 + H2SO4 -> KHSO4 + Cr2S3O12 + H2O + O2", "Subsection",
+ CellChangeTimes->{{3.937134482954521*^9, 
+  3.9371345168204584`*^9}},ExpressionUUID->"419a44ef-36a3-c746-b4db-\
+d95c8ae437bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HilbertBalance", "[", 
+  "\"\<K2Cr2O3+ H2O2 + H2SO4 -> KHSO4 + Cr2S3O12 + H2O + O2\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9371343949942684`*^9, 3.937134485663835*^9}, 
+   3.937134525033936*^9, 3.937134576683783*^9},
+ CellLabel->"In[20]:=",ExpressionUUID->"788a4474-3063-f744-8f7b-810ba9215ee1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\<\"\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\
+\\(O\\), \\(4\\)]\\)\"\>", 
+  "\[RightArrow]", "\<\"KHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cr\\), \\(2\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(S\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(12\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)\"\>"}]], "Print",
+ CellChangeTimes->{{3.9371344357045784`*^9, 3.937134486463553*^9}, 
+   3.937134525883679*^9, 3.937134577604292*^9, 3.9381510507926006`*^9, 
+   3.9384962282622557`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[20]:=",ExpressionUUID->"63031c4f-71dc-49d9-85ad-\
+e2c4e3a10208"],
+
+Cell[BoxData["\<\"2\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)=2\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)O+\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(2\\)]\\)\\n\\!\\(\\*SubscriptBox[\\(K\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(Cr\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(3\\)]\\)+\\!\\(\\*SubscriptBox[\\(H\\), \
+\\(2\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \\(2\\)]\\)+5\\!\\(\\*SubscriptBox[\
+\\(H\\), \\(2\\)]\\)S\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)=2KHS\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(4\\)]\\)+\\!\\(\\*SubscriptBox[\\(Cr\\), \\(2\\)]\\)\\!\\(\\*SubscriptBox[\
+\\(S\\), \\(3\\)]\\)\\!\\(\\*SubscriptBox[\\(O\\), \
+\\(12\\)]\\)+5\\!\\(\\*SubscriptBox[\\(H\\), \\(2\\)]\\)O\"\>"], "Print",
+ CellChangeTimes->{{3.9371344357045784`*^9, 3.937134486463553*^9}, 
+   3.937134525883679*^9, 3.937134577604292*^9, 3.9381510507926006`*^9, 
+   3.9384962282652645`*^9},
+ CellLabel->
+  "\:6b63\:5728\:8ba1\:7b97In[20]:=",ExpressionUUID->"5758277c-ab77-409b-9acd-\
+088bdce6f69e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1138.5, 563.25},
+WindowMargins->{{Automatic, 83.25}, {43.5, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (2023\:5e747\:670824\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"465adc5b-4668-c341-9f85-f5382d5ed208"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 929, 15, 123, "Subsubsection",ExpressionUUID->"57e7b5b8-2fd1-0c40-b95d-eb5dfc5c142c"],
+Cell[1512, 39, 881, 23, 86, "Input",ExpressionUUID->"4b499569-ef76-4c73-8b67-926b3dbe9b47"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2430, 67, 1159, 34, 54, "Subsection",ExpressionUUID->"719c09da-661d-4554-85c3-431801bd10fc"],
+Cell[CellGroupData[{
+Cell[3614, 105, 591, 13, 28, "Input",ExpressionUUID->"7810b94a-ff39-be49-8714-4abf89f94b5d"],
+Cell[CellGroupData[{
+Cell[4230, 122, 1016, 18, 23, "Print",ExpressionUUID->"ae6289fa-5ab1-4591-8090-073951514401"],
+Cell[5249, 142, 1555, 29, 59, "Print",ExpressionUUID->"b2688d2c-9ddb-4b6a-b6f9-a7e84de54571"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6853, 177, 439, 10, 28, "Input",ExpressionUUID->"0f19b7a4-2453-4440-baa0-1ad4882ca44e"],
+Cell[7295, 189, 4761, 116, 109, "Output",ExpressionUUID->"5e550ed1-34d5-4269-8714-8a8cf932334e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12105, 311, 185, 4, 54, "Subsection",ExpressionUUID->"572f2a9b-27cf-b04c-bba2-13dc35639351"],
+Cell[CellGroupData[{
+Cell[12315, 319, 290, 5, 28, "Input",ExpressionUUID->"645d071f-f855-7b48-bbe3-a263e4a5fb0d"],
+Cell[CellGroupData[{
+Cell[12630, 328, 763, 15, 22, "Print",ExpressionUUID->"2c2d3e59-abbf-44de-acbe-39832a2599c9"],
+Cell[13396, 345, 4554, 93, 304, "Print",ExpressionUUID->"0af1a383-f715-4402-8e30-9d2269d16a88"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17999, 444, 241, 4, 28, "Input",ExpressionUUID->"d1b9b899-1387-fc4a-9008-7fd67721e6f3"],
+Cell[18243, 450, 8598, 208, 204, "Output",ExpressionUUID->"45fc77a7-88f3-4475-8296-e16d89d2b519"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26890, 664, 199, 3, 54, "Subsection",ExpressionUUID->"711a6d7b-94b9-b049-8b51-c85106259490"],
+Cell[CellGroupData[{
+Cell[27114, 671, 311, 5, 28, "Input",ExpressionUUID->"f31a9130-c114-4f25-98ea-d289814dba77"],
+Cell[CellGroupData[{
+Cell[27450, 680, 720, 13, 22, "Print",ExpressionUUID->"f7947b3f-491f-46db-bf19-e59bfe5e60a8"],
+Cell[28173, 695, 1708, 34, 75, "Print",ExpressionUUID->"603da9af-7146-4d10-b576-a0c042d84370"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29930, 735, 233, 4, 28, "Input",ExpressionUUID->"d0c7b4fc-f7b8-1f4f-8631-582468dcbdc8"],
+Cell[30166, 741, 5729, 141, 128, "Output",ExpressionUUID->"55beb263-050e-4846-81e0-f1e0f94e7836"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35944, 888, 200, 4, 54, "Subsection",ExpressionUUID->"41ab16d2-685a-c14f-9f31-05a8ae568276"],
+Cell[CellGroupData[{
+Cell[36169, 896, 285, 5, 28, "Input",ExpressionUUID->"9f6482b9-d873-4eef-bdc9-9f30c1b362af"],
+Cell[CellGroupData[{
+Cell[36479, 905, 1280, 24, 22, "Print",ExpressionUUID->"7f2b8eec-62ca-4f04-aea4-64a79b10d944"],
+Cell[37762, 931, 24708, 465, 532, "Print",ExpressionUUID->"1ce3109e-a66c-4b0d-9302-6dc158ba9eea"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[62531, 1403, 144, 3, 54, "Subsection",ExpressionUUID->"bed5adb1-e6b4-c743-98e1-f75f935f67e1"],
+Cell[CellGroupData[{
+Cell[62700, 1410, 231, 3, 28, "Input",ExpressionUUID->"9097f44b-7150-427b-b6b4-a3fd6a49aa6a"],
+Cell[CellGroupData[{
+Cell[62956, 1417, 583, 11, 22, "Print",ExpressionUUID->"a71bf6d9-661c-430e-b7cd-b3ba291ebe20"],
+Cell[63542, 1430, 425, 8, 22, "Print",ExpressionUUID->"ec1917b0-046f-4fe5-977f-075329c45dd7"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64028, 1445, 141, 3, 54, "Subsection",ExpressionUUID->"e751d403-86e1-9f4f-a6dd-55afa24e3c92"],
+Cell[CellGroupData[{
+Cell[64194, 1452, 230, 3, 28, "Input",ExpressionUUID->"3f83ae5e-cf1b-4368-9fde-f50a45d39ccb"],
+Cell[CellGroupData[{
+Cell[64449, 1459, 475, 10, 22, "Print",ExpressionUUID->"b61fd4f1-0d20-4787-bb9d-08fa04e21879"],
+Cell[64927, 1471, 396, 7, 22, "Print",ExpressionUUID->"562aa5a9-5179-4d70-b01a-50664bae13ef"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[65384, 1485, 285, 6, 54, "Subsection",ExpressionUUID->"9c7281e0-5921-0c44-9ae3-c2e737f40f24"],
+Cell[CellGroupData[{
+Cell[65694, 1495, 295, 5, 28, "Input",ExpressionUUID->"159cff40-92d0-5642-ac50-d4c16fa28c2f"],
+Cell[CellGroupData[{
+Cell[66014, 1504, 1067, 20, 22, "Print",ExpressionUUID->"1bb848b7-6050-4bb5-9a8c-becbae573a45"],
+Cell[67084, 1526, 1057, 20, 22, "Print",ExpressionUUID->"3a8aafdf-3ac4-4cad-bf41-4d7d96d3ce4b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68202, 1553, 162, 3, 54, "Subsection",ExpressionUUID->"cf9af060-2e81-5741-8fc9-66c33cdf49cc"],
+Cell[CellGroupData[{
+Cell[68389, 1560, 306, 6, 28, "Input",ExpressionUUID->"8c46f1b2-16bb-4153-b768-238cdadcf304"],
+Cell[CellGroupData[{
+Cell[68720, 1570, 679, 12, 22, "Print",ExpressionUUID->"6db843ce-bb5c-4c27-9f73-673d681cd7e8"],
+Cell[69402, 1584, 1312, 24, 75, "Print",ExpressionUUID->"89f4ad3e-95d1-4dfd-8981-65d4a53bcdb5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70775, 1615, 230, 6, 54, "Subsection",ExpressionUUID->"8eac7570-b284-154d-aba2-e71644c7843b"],
+Cell[CellGroupData[{
+Cell[71030, 1625, 243, 6, 28, "Input",ExpressionUUID->"b9da5d66-e100-4305-8617-c29ffee09a29"],
+Cell[CellGroupData[{
+Cell[71298, 1635, 885, 15, 22, "Print",ExpressionUUID->"34e063f3-5321-463a-87ae-ec91fa5adb78"],
+Cell[72186, 1652, 4958, 92, 409, "Print",ExpressionUUID->"ba2719a2-2abe-4a76-94b2-da1674728112"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77205, 1751, 248, 6, 54, "Subsection",ExpressionUUID->"4d5dce44-c69d-914d-b428-a193df853854"],
+Cell[CellGroupData[{
+Cell[77478, 1761, 259, 6, 28, "Input",ExpressionUUID->"cbfbba85-d413-4433-92a7-06ad9ef6ca5d"],
+Cell[CellGroupData[{
+Cell[77762, 1771, 905, 17, 22, "Print",ExpressionUUID->"b065f42c-7edc-42cc-9c4a-473e1922bfa7"],
+Cell[78670, 1790, 17804, 329, 1375, "Print",ExpressionUUID->"7d969d28-c71b-444e-94b9-74771308ad73"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[96535, 2126, 158, 3, 54, "Subsection",ExpressionUUID->"91bf5177-9ac6-5d4d-909c-91d2361451c4"],
+Cell[CellGroupData[{
+Cell[96718, 2133, 180, 3, 28, "Input",ExpressionUUID->"b5a3b6e9-ea29-43c8-9544-c098d8f2f440"],
+Cell[CellGroupData[{
+Cell[96923, 2140, 550, 10, 22, "Print",ExpressionUUID->"6bed3185-35f3-4697-8bf0-f566eeae586a"],
+Cell[97476, 2152, 611, 11, 40, "Print",ExpressionUUID->"18f4ab0b-ce3d-405f-a1b3-944e9478220a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[98148, 2170, 158, 3, 54, "Subsection",ExpressionUUID->"b8f9730a-e506-9c48-a1e5-b5e3f67f1257"],
+Cell[CellGroupData[{
+Cell[98331, 2177, 851, 13, 28, "Input",ExpressionUUID->"bc62e85d-4eec-40b9-9ce5-f13fe8b34ed7"],
+Cell[CellGroupData[{
+Cell[99207, 2194, 636, 12, 22, "Print",ExpressionUUID->"1d7787e4-f44a-4eb5-b41d-468d0ac0c1be"],
+Cell[99846, 2208, 803, 15, 58, "Print",ExpressionUUID->"cb2eced1-1c29-4633-ab7b-595e8efbf04b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[100710, 2230, 196, 3, 54, "Subsection",ExpressionUUID->"a7d6b92f-726e-3749-b2c1-1e993b5d45ec"],
+Cell[CellGroupData[{
+Cell[100931, 2237, 340, 5, 28, "Input",ExpressionUUID->"efdef552-6727-764f-8f64-4408351283c6"],
+Cell[CellGroupData[{
+Cell[101296, 2246, 732, 14, 22, "Print",ExpressionUUID->"0c771ccf-a1c7-4be5-b4fb-a4bef5e2a3a9"],
+Cell[102031, 2262, 1208, 21, 58, "Print",ExpressionUUID->"29296a42-ff75-44d8-9a6c-74983a9084f3"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103300, 2290, 202, 3, 54, "Subsection",ExpressionUUID->"419a44ef-36a3-c746-b4db-d95c8ae437bb"],
+Cell[CellGroupData[{
+Cell[103527, 2297, 327, 6, 28, "Input",ExpressionUUID->"788a4474-3063-f744-8f7b-810ba9215ee1"],
+Cell[CellGroupData[{
+Cell[103879, 2307, 933, 18, 22, "Print",ExpressionUUID->"63031c4f-71dc-49d9-85ad-e2c4e3a10208"],
+Cell[104815, 2327, 1030, 18, 40, "Print",ExpressionUUID->"5758277c-ab77-409b-9acd-088bdce6f69e"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
